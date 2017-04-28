@@ -6,14 +6,10 @@
         @click="handleAddNew"
         v-if="!addNew"
       >Add New</button>
-      <image-form-create
-        v-if="addNew"
-        @submit="handleNewImageSubmit"
-        @cancel="handleCancelNew"
-      ></image-form-create>
+      <image-form />
     </div>
 
-    <div class="list" v-if="images.results.length > 0">
+    <div class="" v-if="images.results.length > 0">
       <div class="image-box"
         v-for="image in images.results"
         @click="selectImage(image)"
@@ -39,13 +35,13 @@
 </template>
 
 <script>
-import ImageFormCreate from '@components/image/forms/Create.vue'
+import ImageForm from '@components/image/forms/ImageForm.vue'
 
 export default {
   name: 'image-container-chooser',
   props: ['user'],
   components: {
-    ImageFormCreate
+    ImageForm
   },
   data() {
     return {

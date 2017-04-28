@@ -86,7 +86,28 @@ div#body-container {min-height: 95vh;}
   border-bottom: 2px solid;
 }
 
+// Images
+.img-small {max-width: 128px;}
+.img-medium {max-width: 256px;}
+.img-large {max-width: 528px;}
 
+// Tags
+.tag-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.tag {
+  padding: 0.3em;
+  background-color: $accent-1;
+  border-radius: 5px;
+  margin: 0.3em;
+}
+
+// Margins
 .m0 {margin: 0;}
 .m1 {margin: 1em;}
 .m2 {margin: 2em;}
@@ -112,6 +133,7 @@ div#body-container {min-height: 95vh;}
 .ml2 {margin-left: 2em;}
 .ml3 {margin-left: 3em;}
 
+// Padding
 .p0 {padding: 0;}
 .p1 {padding: 1em;}
 .p2 {padding: 2em;}
@@ -137,6 +159,7 @@ div#body-container {min-height: 95vh;}
 .pl2 {padding-left: 2em;}
 .pl3 {padding-left: 3em;}
 
+// Font sizes
 .s1 {font-size: 1em;}
 .s2 {font-size: 1.5em;}
 .s3 {font-size: 2em;}
@@ -144,6 +167,7 @@ div#body-container {min-height: 95vh;}
 .s5 {font-size: 3em;}
 .s6 {font-size: 3.5em;}
 
+// Borders
 .b1 {border-width: 1px; border-style: solid;}
 .b2 {border-width: 2px; border-style: solid;}
 .b3 {border-width: 3px; border-style: solid;}

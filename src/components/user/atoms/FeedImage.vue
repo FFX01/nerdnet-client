@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import moment from 'moment'
-
 export default {
   name: 'user-atom-feed-image',
   props: ['obj', 'user'],
@@ -26,10 +24,24 @@ export default {
       return this.obj.content_object
     },
     pubDate() {
-      return moment(this.image.timestamp).format('YYYY-MM-DD - h:mm a')
+      return this.$moment(this.obj.timestamp).format('YYYY-MM-DD - h:mm a')
     },
     actionText() {
-      return `${this.user.username} ${this.obj.action_type} a new Image!`
+      let username = this.user.username
+      let action = this.obj.action_type
+      let message = ""
+      switch (action) {
+        case "create":
+          message = `${username} added a new Image.`
+          break
+        case "update":
+          message = `${username} updated an Image.`
+          break
+        default:
+          message = `${username} did something.`
+          break
+      }
+      return message
     }
   }
 }

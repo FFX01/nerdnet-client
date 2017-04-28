@@ -22,9 +22,6 @@
 </template>
 
 <script>
-import moment from 'moment'
-import marked from 'marked'
-
 export default {
   name: 'user-atom-feed-article',
   props: ['obj', 'user'],
@@ -33,13 +30,27 @@ export default {
       return this.obj.content_object
     },
     actionText() {
-      return `${this.user.username} ${this.obj.action_type} a new Article!`
+      let username = this.user.username
+      let action = this.obj.action_type
+      let message = ""
+      switch (action) {
+        case "create":
+          message = `${username} added a new Article.`
+          break
+        case "update":
+          message = `${username} updated an Article.`
+          break
+        default:
+          message = `${username} did something.`
+          break
+      }
+      return message
     },
     pubDate() {
-      return moment(this.article.timestamp).format("YYYY-MM-DD - h:mm a")
+      return this.$moment(this.obj.timestamp).format("YYYY-MM-DD - h:mm a")
     },
     bodyPreview() {
-      return marked(this.article.body.substring(0, 255), {sanitize: true})
+      return this.$marked(this.article.body.substring(0, 255), {sanitize: true})
     }
   }
 }

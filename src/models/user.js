@@ -57,6 +57,20 @@ const actions = {
       console.log(err)
     })
   },
+  getFeedPreviousPage(context, params={}) {
+    if (context.state.feed.previous !== null) {
+      api.get(context.state.feed.previous).then(resp => {
+        context.commit('receiveFeed', resp.data)
+      }).catch(err => console.log(err))
+    }
+  },
+  getFeedNextPage(context, params={}) {
+    if (context.state.feed.next !== null) {
+      api.get(context.state.feed.next).then(resp => {
+        context.commit('receiveFeed', resp.data)
+      }).catch(err => console.log(err))
+    }
+  },
   updateDetail(context, data) {
     api.put(urls.detail(data.id), data).then(resp => {
       context.commit('receiveDetail', resp.data)

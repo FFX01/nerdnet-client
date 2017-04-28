@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="tabs">
+    <ul class="tabs bg-secondary-1 b2 bc-accent-2">
       <li class="tab"
         :class="{active: isActive('home')}"
         @click="onTabChange('home')"

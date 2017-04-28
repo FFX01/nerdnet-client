@@ -9,7 +9,7 @@
     <user-atom-profile-tabs :activeTab="activeTab"
       v-on:changeTab="handleTabChange"
     ></user-atom-profile-tabs>
-    <user-container-feed :objects="feed.results"
+    <user-container-feed
       :user="user"
       v-if="activeTab === 'home'"
     ></user-container-feed>
