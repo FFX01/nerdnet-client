@@ -4,7 +4,7 @@
       v-bind:style="backgroundImageSrc"
     >
       <div class="title-wrapper">
-        <h1>{{article.title}}</h1>
+        <h1 id="article-title">{{article.title}}</h1>
       </div>
     </div>
     <div>
@@ -63,4 +63,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#article-title {
+  margin: 0;
+}
+.article-header {
+  background-position: center;
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+.title-wrapper {
+  max-width: 50%;
+  background-color: rgba(20,20,20, 0.5);
+  padding: 1em;
+}
 </style>

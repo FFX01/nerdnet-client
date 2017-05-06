@@ -4,6 +4,7 @@
     </div>
     <div>
       <image-box v-for="image in images.results" :image="image"
+        :key="image.id"
         :showOwner="false"
       />
     </div>
