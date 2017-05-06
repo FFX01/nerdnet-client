@@ -14,6 +14,7 @@ import ImagesIndex from '@pages/images/Index.vue'
 import ImageCreate from '@pages/images/Create.vue'
 import ImageDetail from '@pages/images/Detail.vue'
 import ImageEdit from '@pages/images/Edit.vue'
+import ImageTagIndex from '@pages/images/TagIndex.vue'
 
 import PeopleIndex from '@pages/people/Index.vue'
 import PeopleDetail from '@pages/people/Detail.vue'
@@ -38,6 +39,7 @@ const routes = [
   {name: 'images-create-page', path: '/images/create', component: ImageCreate},
   {name: 'image-detail-page', path: '/images/:id', component: ImageDetail},
   {name: 'image-edit-page', path: '/images/edit/:id', component: ImageEdit},
+  {name: 'image-tag-index-page', path: '/images/:tag', component: ImageTagIndex},
 
   {name: 'people-index-page', path: '/people', component: PeopleIndex},
   {name: 'people-detail-page', path: '/people/:id', component: PeopleDetail},

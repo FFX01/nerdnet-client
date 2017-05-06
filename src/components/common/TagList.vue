@@ -3,7 +3,9 @@
     <li v-for="tag in tags" key="tags.indexOf(tag)"
       class="tag"
     >
-      {{tag}}
+      <router-link :to="{name: 'image-tag-index-page', params: {tag: tag}}">
+        {{tag}}
+      </router-link>
     </li>
   </ul>
 </template>

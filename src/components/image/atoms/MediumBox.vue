@@ -18,14 +18,20 @@
       </div>
       <div v-html="description">
       </div>
+      <tag-list :tags="image.tags" />
     </div>
   </div>
 </template>
 
 <script>
+import TagList from '@components/common/TagList.vue'
+
 export default {
   name: 'medium-box',
   props: ['image', 'showOwner'],
+  components: {
+    TagList
+  },
   computed: {
     title() {
       return this.image.title ? this.image.title : "Untitled"
